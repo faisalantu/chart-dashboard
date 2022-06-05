@@ -1,12 +1,11 @@
 const express = require("express");
 const router = express.Router();
 const ChartDataModel = require("../models/ChartData");
-const mongoose = require("mongoose");
 
 // @route   GET api/data
 // @desc    get all data
 // @access  public
-// @query   userEmail,club,skip,limit
+// @query_body   end_year, topic, sector, region, source, pestle, country, impact
 router.get("/", async (req, res) => {
   try {
     let { end_year, topic, sector, region, source, pestle, country, impact } =
