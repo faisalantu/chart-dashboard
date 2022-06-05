@@ -19,7 +19,7 @@ app.get("/", (req, res) => {
 });
 
 //api routes here
-app.use("/api/data", require("./routes/da"));
+app.use("/api/data", require("./routes/data"));
 
 
 const PORT = process.env.PORT || 5000;
