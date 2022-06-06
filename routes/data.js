@@ -6,11 +6,12 @@ const ChartDataModel = require("../models/ChartData");
 // @desc    get all data
 // @access  public
 // @query_body   end_year, topic, sector, region, source, pestle, country, impact
-router.get("/", async (req, res) => {
+router.post("/", async (req, res) => {
   try {
     let { end_year, topic, sector, region, source, pestle, country, impact } =
       req.body;
-
+    console.log(end_year, topic, sector, region, source, pestle, country, impact);
+    console.log(req.body);
     function matchQuery() {
       return {
         end_year: end_year ? { $nin: [null, ""] } : { $exists: true },
